@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.mongodb.panache.common.MongoEntity;
+import jakarta.enterprise.context.ApplicationScoped;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -17,10 +18,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonIgnoreProperties("id")
 @MongoEntity(collection = "ProductDetails",database = "DurgaTest")
+@ApplicationScoped
 public class ProductDetails extends PanacheMongoEntity {
     public String firstname;
     public String lastname;
     public List<Address> address;
     public List<ProductCategory> productsCategory;
     public String time;
+    
 }
